@@ -57,8 +57,23 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\left.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\pagination.png" />
+    <Content Include="img\pin_blue.png" />
+    <Content Include="img\pin_green.png" />
+    <Content Include="img\pin_orange.png" />
+    <Content Include="img\pin_red.png" />
+    <Content Include="img\pin_yellow.png" />
+    <Content Include="img\pmu1.jpg" />
+    <Content Include="img\pmu2.jpg" />
+    <Content Include="img\pmu3.jpg" />
+    <Content Include="img\right.png" />
     <Content Include="index.html" />
-    <Content Include="css\index.css" />
+    <Content Include="css\global.css" />
     <Content Include="js\index.js" />
     <Content Include="img\logo.png" />
     <Content Include="img\cordova.png" />
@@ -70,6 +85,10 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="js\slides.js" />
+    <Content Include="scripts\dine.xml" />
+    <Content Include="scripts\lodging.xml" />
+    <Content Include="scripts\venue.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

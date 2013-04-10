@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Records>
+  
+    <Dine>
+        
+        <name>Ford</name>
+        <address>Purdue University</address>
+        <img>img/2.jpg</img>
+        <img2>img/1.jpg</img2>
+        <img3>img/3.jpg</img3>
+        <caption>Ford Dining court</caption>
+        <lat>40.431694 </lat>
+        <lng>-86.920524</lng>
+        
+    </Dine>
+     
+    <Dine>
+        
+        <name>Wiley</name>
+        <address>Purdue University</address>
+        <img>img/2.jpg</img>
+        <img2>img/pmu2.jpg</img2>
+        <img3>img/pmu3.jpg</img3>
+        <caption>Wiley</caption>
+        <lat>40.429391</lat>
+        <lng>-86.920781</lng>
+        
+    </Dine>
+
+    <Dine>
+        
+        <name>Earhart</name>
+        <address>Purdue University</address>
+        <img>img/2.jpg</img>
+        <img2>img/pmu2.jpg</img2>
+        <img3>img/pmu3.jpg</img3>
+        <caption>Earhart</caption>
+        <lat>40.42576</lat>
+        <lng>-86.92495</lng>
+        
+    </Dine>
+    
+    <Dine>
+        
+        <name>HillenBrand</name>
+        <address>Purdue University</address>
+        <img>img/2.jpg</img>
+        <img2>img/pmu2.jpg</img2>
+        <img3>img/pmu3.jpg</img3>
+        <caption>HillenBrand</caption>
+        <lat>40.42686</lat>
+        <lng>-86.92648</lng>
+        
+    </Dine>
+
+    
+</Records>
