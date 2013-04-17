@@ -23,11 +23,11 @@
 <div data-role="footer">   
     <div data-role="navbar">
         <ul>
-            <li id="toggle" onclick = ""><a href="">Venues</a></li>
-            <li id="toggle2" onclick = ""><a href="">Dining</a></li>
-            <li id="toggle3"><a href="#" >Lodging</a></li> 
-            <li id=""><a href="#" >XXXXX</a></li> 
-            <li id=""><a href="#" >XXXXX</a></li>
+            <li id="toggle" onclick = ""><a href="">Venues<img src="img/pin_blue.png" height="20" width="20"/></a></li>
+            <li id="toggle2" onclick = ""><a href="">Dining<img src="img/pin_green.png" height="20" width="20"/></a></li>
+            <li id="toggle3" onclick = ""><a href="">Lodging<img src="img/pin_red.png" height="20" width="20"/></a></li> 
+            <li id="toggle4" onclick = ""><a href="">Athletics<img src="img/pin_yellow.png" height="20" width="20"/></a></li> 
+            <li id="toggle5" onclick = ""><a href="">Theatre<img src="img/pin_orange.png" height="20" width="20"/></a></li>
         </ul>
     </div> <!-- Div navbar ends -->
 </div> <!-- Div footer ends --> 
@@ -109,19 +109,19 @@ function initialize() {
                     '<div class="slide">'+
                         '<img src="'+$(this).find('img').text()+'" width="600" height="420" alt="Slide 1">'+'</a>'+
                         '<div class="caption" style="bottom:0">'+
-                            '<p>'+"test1"+'</p>'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
                         '</div>'+
                     '</div>'+
                     '<div class="slide">'+
                         '<img src="'+$(this).find('img2').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
                         '<div class="caption">'+
-                            '<p>'+"test2"+'</p>'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
                         '</div>'+
                     '</div>'+ 
                         '<div class="slide">'+
                         '<img src="'+$(this).find('img3').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
                         '<div class="caption">'+
-                            '<p>'+"test3"+'</p>'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
                         '</div>'+
                     '</div>'+ 
                         '</div>'+
@@ -349,8 +349,7 @@ function initialize() {
  $.get("scripts/lodging.xml", function(xml){
 		$(xml).find("lodge").each(function(){
 			
-            var detail = $(this).find('detail').text();
-  			var lat = $(this).find('lat').text();
+   			var lat = $(this).find('lat').text();
 			var lng = $(this).find('lng').text();
 			var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
 
@@ -363,19 +362,19 @@ function initialize() {
 					'<div class="slide">'+
 						'<img src="'+$(this).find('img').text()+'" width="600" height="420" alt="Slide 1">'+'</a>'+
 						'<div class="caption" style="bottom:0">'+
-							'<p>'+detail+'</p>'+
+							'<p>'+$(this).find('caption').text()+'</p>'+
 						'</div>'+
 					'</div>'+
 					'<div class="slide">'+
 						'<img src="'+$(this).find('img2').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
 						'<div class="caption">'+
-							'<p>'+detail+'</p>'+
+							'<p>'+$(this).find('caption').text()+'</p>'+
 						'</div>'+
 					'</div>'+ 
                         '<div class="slide">'+
 						'<img src="'+$(this).find('img3').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
 						'<div class="caption">'+
-							'<p>'+detail+'</p>'+
+							'<p>'+$(this).find('caption').text()+'</p>'+
 						'</div>'+
 					'</div>'+ 
                         '</div>'+
@@ -469,6 +468,266 @@ function initialize() {
           });     
     
     //----------------END LODGE---------------------//
+    
+    //----------------START ATHLETICS---------------------//    
+    
+    $.get("scripts/athletics.xml", function(xml){
+    $(xml).find("athletics").each(function(){
+        
+       
+    var lat = $(this).find('lat').text();
+    var lng = $(this).find('lng').text();
+    var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+
+
+        var html = '<div id="container">'+
+        '<div id="example">'+
+            
+            '<div id="slides">'+
+                '<div class="slides_container">'+
+                    '<div class="slide">'+
+                        '<img src="'+$(this).find('img').text()+'" width="600" height="420" alt="Slide 1">'+'</a>'+
+                        '<div class="caption" style="bottom:0">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="slide">'+
+                        '<img src="'+$(this).find('img2').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
+                        '<div class="caption">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+ 
+                        '<div class="slide">'+
+                        '<img src="'+$(this).find('img3').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
+                        '<div class="caption">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+ 
+                        '</div>'+
+                '<a href="#" class="prev">'+'<img src="img/left.png" width="40" height="50" alt="Arrow Prev">'+'</a>'+
+                '<a href="#" class="next">'+'<img src="img/right.png" width="40" height="50" alt="Arrow Next">'+'</a>'+
+            '</div>'+
+            
+        '</div>';
+        
+     
+                                      
+    var locations = [point];
+    
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+            
+    var pin = "img/pin_yellow.png";        
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: point,
+        map: map,
+          icon:pin,
+          visible:true
+      });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            closeInfos();
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+            infos[0]=infowindow;
+        }
+        })(marker, i));
+        
+        
+    function closeInfos(){
+ 
+           if(infos.length > 0){
+
+              /* detach the info-window from the marker ... undocumented in the API docs */
+              infos[0].set("marker", null);
+
+              /* and close it */
+              infos[0].close();
+         
+              /* blank the array */
+              infos.length = 0;
+           }
+        }
+       
+        google.maps.event.addListener(map, "click", function() {
+          
+           infowindow.close();
+           });
+        
+    google.maps.event.addListener(infowindow, 'domready', function(){ 
+        $(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: false,
+				
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+            
+        });   
+        
+        $("#toggle4").click(function() {
+      
+        if(marker.getVisible()) {
+          marker.setVisible(false);
+        }
+        else {
+          marker.setVisible(true);
+          
+        }
+      
+    }); 
+        
+    }
+      
+            
+        });
+              
+              
+          });
+      
+//----------------END ATHLETICS---------------------//
+    
+//----------------START THEATRE---------------------//    
+    
+    $.get("scripts/theatre.xml", function(xml){
+    $(xml).find("theatre").each(function(){
+        
+       
+    var lat = $(this).find('lat').text();
+    var lng = $(this).find('lng').text();
+    var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+
+
+        var html = '<div id="container">'+
+        '<div id="example">'+
+            
+            '<div id="slides">'+
+                '<div class="slides_container">'+
+                    '<div class="slide">'+
+                        '<img src="'+$(this).find('img').text()+'" width="600" height="420" alt="Slide 1">'+'</a>'+
+                        '<div class="caption" style="bottom:0">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="slide">'+
+                        '<img src="'+$(this).find('img2').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
+                        '<div class="caption">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+ 
+                        '<div class="slide">'+
+                        '<img src="'+$(this).find('img3').text()+'" width="600" height="420" alt="Slide 2">'+'</a>'+
+                        '<div class="caption">'+
+                            '<p>'+$(this).find('caption').text()+'</p>'+
+                        '</div>'+
+                    '</div>'+ 
+                        '</div>'+
+                '<a href="#" class="prev">'+'<img src="img/left.png" width="40" height="50" alt="Arrow Prev">'+'</a>'+
+                '<a href="#" class="next">'+'<img src="img/right.png" width="40" height="50" alt="Arrow Next">'+'</a>'+
+            '</div>'+
+            
+        '</div>';
+        
+     
+                                      
+    var locations = [point];
+    
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+            
+    var pin = "img/pin_orange.png";        
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: point,
+        map: map,
+          icon:pin,
+          visible:true
+      });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            closeInfos();
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+            infos[0]=infowindow;
+        }
+        })(marker, i));
+        
+        
+    function closeInfos(){
+ 
+           if(infos.length > 0){
+
+              /* detach the info-window from the marker ... undocumented in the API docs */
+              infos[0].set("marker", null);
+
+              /* and close it */
+              infos[0].close();
+         
+              /* blank the array */
+              infos.length = 0;
+           }
+        }
+       
+        google.maps.event.addListener(map, "click", function() {
+          
+           infowindow.close();
+           });
+        
+    google.maps.event.addListener(infowindow, 'domready', function(){ 
+        $(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: false,
+				
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+            
+        });   
+        
+        $("#toggle5").click(function() {
+      
+        if(marker.getVisible()) {
+          marker.setVisible(false);
+        }
+        else {
+          marker.setVisible(true);
+          
+        }
+      
+    }); 
+        
+    }
+      
+            
+        });
+              
+              
+          });
+      
+//----------------END THEATRE---------------------//    
     
 } ///-----END FUNCTION INITIALIZE-----//
     
