@@ -75,7 +75,29 @@
         <lng>-86.92282</lng>
         
    </Venue>
+    
+    <Venue>
+        <name>Engineering</name>
+        <address>Purdue University</address>
+        <img>img/eng1.png</img>
+        <img2></img2>
+        <img3></img3>
+        <caption>Engineering</caption>
+        <lat>40.42913</lat>
+        <lng>-86.91297</lng>
+        
+   </Venue>
 
-
+    <Venue>
+        <name>Rawls Hall</name>
+        <address>Purdue University</address>
+        <img>img/rawl1.png</img>
+        <img2></img2>
+        <img3></img3>
+        <caption>Rawls Hall</caption>
+        <lat>40.42373</lat>
+        <lng>-86.91006</lng>
+        
+   </Venue>
     
 </Records>

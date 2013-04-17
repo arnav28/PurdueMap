@@ -60,6 +60,27 @@
     <Content Include="img\1.jpg" />
     <Content Include="img\2.jpg" />
     <Content Include="img\3.jpg" />
+    <Content Include="img\baseball.png" />
+    <Content Include="img\cary.png" />
+    <Content Include="img\earhart_dining.png" />
+    <Content Include="img\earhart_lodging.png" />
+    <Content Include="img\elliot.png" />
+    <Content Include="img\first.png" />
+    <Content Include="img\ford.png" />
+    <Content Include="img\fowler.png" />
+    <Content Include="img\golf.png" />
+    <Content Include="img\harrison.png" />
+    <Content Include="img\hillenbrand_dining.png" />
+    <Content Include="img\hillenbrand_lodging.png" />
+    <Content Include="img\lambert.png" />
+    <Content Include="img\loeb.png" />
+    <Content Include="img\mackey.png" />
+    <Content Include="img\mccutcheon.png" />
+    <Content Include="img\pmu_commons.png" />
+    <Content Include="img\pool.png" />
+    <Content Include="img\rankin.png" />
+    <Content Include="img\rawl1.png" />
+    <Content Include="img\eng1.png" />
     <Content Include="img\left.png" />
     <Content Include="img\loading.gif" />
     <Content Include="img\pagination.png" />
@@ -72,6 +93,15 @@
     <Content Include="img\pmu2.jpg" />
     <Content Include="img\pmu3.jpg" />
     <Content Include="img\right.png" />
+    <Content Include="img\ropes.png" />
+    <Content Include="img\rossade_atheletics.png" />
+    <Content Include="img\rsc.png" />
+    <Content Include="img\shreve.png" />
+    <Content Include="img\slayter.png" />
+    <Content Include="img\stew_catering.png" />
+    <Content Include="img\tennis.png" />
+    <Content Include="img\wiley.png" />
+    <Content Include="img\windsor_dining.png" />
     <Content Include="index.html" />
     <Content Include="css\global.css" />
     <Content Include="js\index.js" />
@@ -86,6 +116,8 @@
       <TargetName>cordova.js</TargetName>
     </Content>
     <Content Include="js\slides.js" />
+    <Content Include="scripts\athletics.xml" />
+    <Content Include="scripts\theatre.xml" />
     <Content Include="scripts\dine.xml" />
     <Content Include="scripts\lodging.xml" />
     <Content Include="scripts\venue.xml" />
